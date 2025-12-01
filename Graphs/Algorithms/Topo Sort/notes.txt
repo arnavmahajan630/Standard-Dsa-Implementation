@@ -1,0 +1,14 @@
+* Topological Sort
+
+Only used of Directed Acyclic Graphs
+
+Definition: Linear ordering of vertices such that if there is an edge between u & v
+then u appears before v in that order
+
+The intution:
+
+- Directed Graph and Acyclic as in Definition
+- Storing dfs of completed nodes
+
+# Why not use a list instead of stack because it would fail on linear Graphs. 6->0->1->2->3
+this would fail. if we must use list then we should keep reversing it.
