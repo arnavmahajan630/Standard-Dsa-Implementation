@@ -5,6 +5,8 @@ Only used of Directed Acyclic Graphs
 Definition: Linear ordering of vertices such that if there is an edge between u & v
 then u appears before v in that order
 
+Dfs and add elements to the stack.
+
 The intution:
 
 - Directed Graph and Acyclic as in Definition
@@ -12,3 +14,25 @@ The intution:
 
 # Why not use a list instead of stack because it would fail on linear Graphs. 6->0->1->2->3
 this would fail. if we must use list then we should keep reversing it.
+
+
+
+* Kahn's Algorithm
+Topological Sort BFS
+
+basically same thing achieved through bfs
+
+$ we can always say there will always be atleast 1 node who will have indegree as 0
+this node can be start node for us. since it's not connected to anyone it has no bounds
+
+$ We then remove connection to every other node connected to this node in queue and 
+  if we do find another node with indegree we add it to queue and continue the process
+
+
+=> A normal bfs push is wrong because
+-  A-c B- c if root = A we get Acb if root is B we get bca but c must be ahead of both
+a and we to satisfy topological sort.
+
+## A node will only enter the sort if all of it's immediate neighbours are already in the sort
+
+BOTH HAVE O(V + E)
