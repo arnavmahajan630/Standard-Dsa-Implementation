@@ -42,6 +42,7 @@ int main() {
         if(!visited[i])TopoSort(i, visited, s);
     }
 
+    cout << "One of the possible Topo sort is as follows: " << endl;
     while(!s.empty()) {
         cout << s.top() << endl;
         s.pop();
