@@ -36,3 +36,8 @@ a and we to satisfy topological sort.
 ## A node will only enter the sort if all of it's immediate neighbours are already in the sort
 
 BOTH HAVE O(V + E)
+
+
+# Cycle Detection using TopoSort is quite simple.
+Since topo sort works only on DAG and we have a cyclic graph all node's won't be present in sort
+so if they are not present we can simply say that this is not a Directed Cyclic Graph

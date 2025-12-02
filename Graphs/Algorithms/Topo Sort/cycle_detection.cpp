@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <queue>
 using namespace std;
 
 const int N = 1e5 + 3;
@@ -28,11 +29,36 @@ bool cycleDetectDfs(int r, vector<bool>&visited, vector<bool>&pviz) {
     return false;
 }
 
+bool DetectCycleBfs(vector<int>&indgr) {
+    int n = indgr.size();
+    int cnt = 0;
+    queue<int>q;
+    for(int i=0; i < n; ++i) {
+        if(indgr[i] == 0) {
+            q.push(i); // added all who had indegree of 0
+        }
+    }
+
+    while(!q.empty()) {
+        int f  = q.front();
+        q.pop();
+        cnt++;
+
+        for(auto x : g[f]) {
+            indgr[x]--;
+            if(indgr[x] == 0) {
+                q.push(x);
+            }
+        }
+    }
+
+    return cnt != n; // if all elements were not then we do have cycle 
+}
+
 int main() {
     int n, m;
     cin >> n >> m;
     InputG(m); // take input for graph in an adjecency list
-    cout << boolalpha;
     bool decectCycleDfs = false;
     vector<bool>visited(n, false);
     vector<bool>pviz(n, false);
@@ -45,6 +71,16 @@ int main() {
         }
     }
     cout << "Detection using DFS ressult is: " << decectCycleDfs << endl;
+
+    vector<int>indgr(n, false);
+    for(int i=0; i < n; ++i) {
+        for(auto x : g[i]) {
+            indgr[x]++;
+        }
+    } // counted the indegree for each node
+
+    cout << "Dectection using the BFS (Topo Sort) is: " << DetectCycleBfs(indgr) << endl;
+
 
     return 0;
 }
