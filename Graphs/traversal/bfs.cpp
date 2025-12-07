@@ -42,5 +42,13 @@ int main() {
         g[u].push_back(v);
         if(u!= v)g[v].push_back(u); // undirected graph
     }
+
+    vector<bool>visited(n, false);
+    for(int i=0; i < n; ++i) {
+        if(!visited[i]) {
+            bfs(i, visited);
+            // dfs(i, visited);
+        }
+    }
     return 0;
 }
