@@ -15,6 +15,9 @@ The intution:
 # Why not use a list instead of stack because it would fail on linear Graphs. 6->0->1->2->3
 this would fail. if we must use list then we should keep reversing it.
 
+# The DFS traversal is only a traversal and not checking for whether the graph is DAG or not
+  It is assumed that the graph will be a DAG
+  Khan's Algo also verified if the graph is dag or not
 
 
 * Kahn's Algorithm
