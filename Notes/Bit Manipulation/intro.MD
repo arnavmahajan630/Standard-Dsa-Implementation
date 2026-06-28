@@ -61,3 +61,16 @@
 * bits never interact with their neighbours
 * ![alt text](image.png)
 
+### XOR Algebra
+* x ^ x = 0 (ofcourse there is no difference in both numbers)
+* x ^ 0 = x
+* Commutative and associative properties hold true
+* if a ^ b = c then a ^ c = b and c ^ b = a
+
+### Fundamental Equation
+* a + b = (a ^b) + 2(a & b)
+    - (a ^ b) is addition witohut carries
+    - (a & b) tells where carry occurs
+    - because a carry shifts bit by 1 we multiply by 2^1
+
+* a + b = (a & b) + (a | b) is also a valid identity
