@@ -74,3 +74,11 @@
     - because a carry shifts bit by 1 we multiply by 2^1
 
 * a + b = (a & b) + (a | b) is also a valid identity
+
+### Prefix XOR Querries
+
+* Same as prefix sums cancels out because x ^ x = 0
+
+### MSB Greedy Property
+* Maximizing a number ? build answer greedily from MSB to LSB
+* 
