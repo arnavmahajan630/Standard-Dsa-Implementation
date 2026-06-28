@@ -56,3 +56,8 @@
 ## Submask Ennumeration
 * 
 
+
+### Bit independence
+* bits never interact with their neighbours
+* ![alt text](image.png)
+
