@@ -18,7 +18,7 @@
     - This appears to be GP thus (a^n-1/ n-1)
 
 * Product of all Factors u(n)
-    - n^t(n)/2 => number of pairs * N where pairs is number of factors / 2
+    - n^(t(n)/2) => number of pairs * N where pairs is number of factors / 2
 
 * Precomputing Factors (Sieve Style)
     - `divisors[j].push_back(i)` for a `vector<vector<int>>` like sieve marks it's multiples as not prime the prime is saved as a divisor ofr all those numbers
