@@ -33,7 +33,7 @@
 * Setting ith Bit for number x: x = (x | (1 << i))
 * clearing the ith bit for number x: x = x & ~(1 << i)
 * Toggling the ith bit for number x: x = x ^ (1 << i)
-* Isolating the lowest set bit for number x: x = x & (~x + 1) gives the mask to operate on lowest set bit
+* Isolating the lowest set bit for number x: x = x & (~x + 1) (x & -x) gives the mask to operate on lowest set bit
 
 ### Checking if a number is power of 2
 * (x & x -1) == 0 8 = 1000 & 0111 if one then and only then yes
